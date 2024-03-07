@@ -1,5 +1,0 @@
-# DotFiles
----
-
-My config dotfiles.
-
