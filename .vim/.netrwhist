@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/Volumes/T7/coding/os/src'
+let g:netrw_dirhist_5='/Volumes/T7/coding/os'
+let g:netrw_dirhist_4='/Volumes/T7/coding/os/src'
+let g:netrw_dirhist_3='/Volumes/T7/coding/os'
+let g:netrw_dirhist_2='/Volumes/T7/coding/os/src'
+let g:netrw_dirhist_1='/Volumes/T7/coding/os'
+let g:netrw_dirhist_0='/Volumes/T7/coding/os/src'
+let g:netrw_dirhist_9='/Volumes/T7/coding/os'
+let g:netrw_dirhist_8='/Volumes/T7/github/kern/src'
+let g:netrw_dirhist_7='/Volumes/T7/github/kern'
