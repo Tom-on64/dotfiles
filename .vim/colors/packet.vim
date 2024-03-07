@@ -59,5 +59,5 @@ hi TabLineFill ctermfg=235 ctermbg=235 cterm=None
 hi TabLineSel ctermfg=104 ctermbg=233 cterm=None
 
 hi LineNr ctermbg=0 ctermfg=2 cterm=None
-hi CursorLine ctermbg=232 ctermfg=None cterm=None
-hi CursorLineNr ctermbg=232 ctermfg=2 cterm=None
+hi CursorLine ctermbg=233 ctermfg=None cterm=None
+hi CursorLineNr ctermbg=233 ctermfg=2 cterm=None
