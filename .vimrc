@@ -31,7 +31,7 @@ map <C-j> :TmuxNavigateDown<CR>
 map <C-k> :TmuxNavigateUp<CR>
 map <C-l> :TmuxNavigateRight<CR>
 
-map <leader>t :tabnew<CR>
+map <leader>t :tabnew<CR>:e 
 map <leader>T :tabclose<CR>
 
 " Use S for global replace
