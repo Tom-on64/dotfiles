@@ -31,6 +31,11 @@ map <C-j> :TmuxNavigateDown<CR>
 map <C-k> :TmuxNavigateUp<CR>
 map <C-l> :TmuxNavigateRight<CR>
 
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 map <leader>t :tabnew<CR>:e 
 map <leader>T :tabclose<CR>
 
