@@ -66,8 +66,14 @@ set statusline+=%l:%c\      " Row and column number
 
 " Plugins
 call plug#begin()
-
-
-
+Plug 'dense-analysis/ale' " Linter
 call plug#end()
+
+" ALE config
+let g:ale_sign_error="! "
+let g:ale_sign_warning="? "
+let g:ale_sign_column_always = 1
+
+" TODO: Fix ALE to work with kern and assembly, etc.
+let g:ale_enabled = 0
 

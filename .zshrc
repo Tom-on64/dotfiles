@@ -23,3 +23,7 @@ source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 alias config='/usr/bin/git --git-dir=/Users/tomas/.dotfiles/ --work-tree=/Users/tomas'
+alias birdFromEgypt='echo -e "\xf0\x93\x85\xb1"'
+alias gst='echo -e "\e[36mGit status:"; git status -s'
+alias cls='clear'
+
