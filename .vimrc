@@ -26,11 +26,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set splitbelow splitright " Split pos by default (^w v/h to split)
 
 " Remaps
-map <C-h> :TmuxNavigateLeft<CR>
-map <C-j> :TmuxNavigateDown<CR>
-map <C-k> :TmuxNavigateUp<CR>
-map <C-l> :TmuxNavigateRight<CR>
-
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -66,7 +61,8 @@ set statusline+=%l:%c\      " Row and column number
 
 " Plugins
 call plug#begin()
-Plug 'dense-analysis/ale' " Linter
+Plug 'fladson/vim-kitty'    " Syntax highlighting for Kitty Config
+Plug 'dense-analysis/ale'   " Linter
 call plug#end()
 
 " ALE config
