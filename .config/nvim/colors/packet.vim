@@ -1,15 +1,9 @@
 let g:colors_name = "packet"
-
 set background=dark
-
-"hi clear
 syntax reset
-
-" Set ANSI color codes
 set t_ZH=[3m
 set t_ZR=[23m
 
-" Code
 hi Constant ctermfg=160 ctermbg=None cterm=None
 hi Boolean ctermfg=78 ctermbg=None cterm=None
 hi String ctermfg=40 ctermbg=None cterm=None
@@ -27,9 +21,10 @@ hi Delimeter ctermfg=226 ctermbg=None cterm=None
 hi Tag ctermfg=226 ctermbg=None cterm=None
 hi Ignore ctermfg=242 ctermbg=None cterm=italic
 hi Underline ctermfg=81 ctermbg=None cterm=underline
+hi MatchParen ctermfg=None ctermbg=21 cterm=bold
 
 " Display
-hi Normal ctermfg=253 ctermbg=0 cterm=None 
+hi Normal ctermfg=253 ctermbg=None cterm=None 
 hi Cursor ctermfg=253 ctermbg=57 cterm=None
 hi SpecialKey ctermfg=39 ctermbg=None cterm=None
 hi Directory ctermfg=83 ctermbg=16 cterm=None
@@ -53,21 +48,15 @@ hi StatusLineNC ctermfg=120 ctermbg=233 cterm=None
 hi StatusLine ctermfg=40 ctermbg=233 cterm=None
 hi VertSplit ctermfg=233 ctermbg=233 cterm=bold
 
-hi TabLine ctermfg=240 ctermbg=236 cterm=None
-hi TabLineFill ctermfg=235 ctermbg=235 cterm=None
-hi TabLineSel ctermfg=104 ctermbg=233 cterm=None
+hi TabLine ctermfg=243 ctermbg=233 cterm=None
+hi TabLineFill ctermfg=235 ctermbg=233 cterm=None
+hi TabLineSel ctermfg=2 ctermbg=235 cterm=None
 
 hi LineNr ctermbg=0 ctermfg=2 cterm=None
 hi CursorLine ctermbg=233 ctermfg=None cterm=None
 hi CursorLineNr ctermbg=233 ctermfg=2 cterm=None
 
-" Gutter
 hi SignColumn ctermbg=233 ctermfg=29 cterm=None
 
-" For ALE linter
 hi SpellBad ctermfg=124 ctermbg=None cterm=bold  
 hi SpellCap ctermfg=20 ctermbg=245 cterm=bold
-hi ALEErrorLine ctermbg=52
-hi ALEWarningSign ctermbg=130
-hi ALESignColumnWithoutError ctermbg=0
-

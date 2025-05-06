@@ -1,0 +1,50 @@
+#
+# Allacritty Config
+#
+
+[window]
+decorations = "None"
+opacity = 0.80
+title = "Terminal"
+
+[font]
+size = 10
+[font.normal]
+family = "BigBlueTermPlus Nerd Font"
+style = "Regular"
+
+[colors.primary]
+foreground = "#c7c7c7"
+background = "#000000"
+
+[colors.normal]
+black 	= "#000000"
+red 	= "#dd0000"
+green	= "#00dd00"
+yellow	= "#dddd00"
+blue	= "#0000dd" 
+magenta	= "#dd00dd"
+cyan	= "#00dddd"
+white	= "#dddddd"
+
+[colors.bright]
+black 	= "#666666"
+red 	= "#ff6666"
+green	= "#66ff66"
+yellow	= "#ffff66"
+blue	= "#6666ff" 
+magenta	= "#ff66ff"
+cyan	= "#66ffff"
+white	= "#ffffff"
+
+[colors.cursor]
+cursor = "#ffffff"
+text = "#000000"
+
+[cursor.style]
+shape = "Block"
+blinking = "On"
+
+[mouse]
+hide_when_typing = true
+

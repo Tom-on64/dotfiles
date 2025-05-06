@@ -3,19 +3,21 @@ let mapleader=' '
 " Config
 set hlsearch " Search highlight
 set incsearch " Incremental Search
-set clipboard=unnamedplus " Use system clipboard (paste only)
+set clipboard=unnamedplus " Use X11's CLIPBOARD
 set nowrap " No text wrap
 set mouse=a " Use mouse
 set cursorline
 
-" 4 space tabs
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-set autoindent
-set fileformat=unix
+" Replace all NBSPs with normal spaces
+autocmd BufWritePre *.c,*.h silent! %s/\u00A0/ /ge
 
+" Tabs
+set tabstop=8 " A '\t' drawn as 8 spaces
+set shiftwidth=8 " 1 indent level is 8 spaces
+set noexpandtab	" Don't expand tabs into spaces
+set autoindent " Automatically indent
+
+set fileformat=unix
 set nocompatible 
 syntax on " Syntax highlighting
 set encoding=utf-8
@@ -38,10 +40,9 @@ map <leader>T :tabclose<CR>
 nnoremap S :%s//g<Left><Left> 
 map <S-Insert> <C-i>
 
-vnoremap y "+y
-
 " Theme
 color packet
+set notermguicolors " Use 256 color mode
 
 " Status line
 highlight Status ctermbg=8 ctermfg=2
@@ -58,18 +59,4 @@ set statusline+=\ Char:\    " Character info
 set statusline+=%b\ 0x%B    " ASCII Value (decimal and hex)
 set statusline+=\ \|\       " Splitter
 set statusline+=%l:%c\      " Row and column number
-
-" Plugins
-call plug#begin()
-Plug 'fladson/vim-kitty'    " Syntax highlighting for Kitty Config
-Plug 'dense-analysis/ale'   " Linter
-call plug#end()
-
-" ALE config
-let g:ale_sign_error="! "
-let g:ale_sign_warning="? "
-let g:ale_sign_column_always = 1
-
-" TODO: Fix ALE to work with kern and assembly, etc.
-let g:ale_enabled = 0
 

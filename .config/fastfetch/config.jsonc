@@ -1,0 +1,96 @@
+/*
+ *  My custom Fastfetch config
+ *  Written by Tom-on
+ */
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "general": { "thread": true },
+    /* "logo": { // 9/11 Fetch logo
+        "source": "~/.config/fastfetch/911.txt",
+        "type": "file",
+        "color": {
+            "1": "green",
+            "2": "yellow",
+            "3": "red",
+            "4": "magenta",
+            "5": "blue"
+        }
+    },*/
+    "display": {
+        "showErrors": true,
+        "hideCursor": true,
+        "separator": " :: ",
+        "key": { "type": "string" },
+        "temp": { "unit": "C" },
+        "color": {
+            "title": "green",
+            "separator": "yellow",
+            "keys": "green",
+            "output": "cyan"
+        },
+        "brightColor": false
+    },
+    "modules": [
+        "break",
+        {
+            "type": "title",
+            "color": {
+                "user": "green",
+                "at": "cyan",
+                "host": "green"
+            }
+        },
+        {
+            "type": "separator",
+            "string": "⎯",
+            "outputColor": "magenta"
+        },
+        {
+            "key": "OS      ",
+            "type": "os",
+            "format": "{2} {8} {12}"
+        },
+        {
+            "key": "Kernel  ",
+            "type": "kernel",
+            "format": "{1} {2}"
+        },
+        {
+            "key": "Uptime  ",
+            "type": "uptime",
+            "format": "{1}d {2}h {3}m"
+        },
+        {
+            "key": "Shell   ",
+            "type": "shell",
+            "format": "{3} {4} @ tty{8}"
+        },
+        {
+            "key": "Display ",
+            "type": "display",
+            "order": "desc",
+            "format": "{1}x{2} @ {3} Hz"
+        },
+        {
+            "key": "CPU     ",
+            "type": "cpu",
+            "format": "{1}"
+        },
+        {
+            "key": "GPU     ",
+            "type": "gpu",
+            "format": "{2}"
+        },
+        {
+            "key": "Memory  ",
+            "type": "memory",
+            "format": "{1} / {2} ({3})"
+        },
+        "break",
+        {
+            "type": "colors",
+            "symbol": "background",
+            "block": { "width": 2 }
+        }
+    ]
+}
