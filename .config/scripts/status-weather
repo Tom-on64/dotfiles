@@ -1,0 +1,14 @@
+#!/bin/bash
+
+URL="https://wttr.in"
+LOCATION=$(cat $XDG_DATA_HOME/location)
+REPORT=$(curl -sf "$URL/$LOCATION?0T")
+
+TEMP=$( echo $REPORT | grep -Eo --color=none '[0-9]+ °C' | sed 's/ °C//' )
+
+case $BLOCK_BUTTON in
+	1) notify-send -t 5000 "$(echo $REPORT | head -1)" "$(echo $REPORT | tail -n +2)" ;;
+esac
+
+echo "$TEMP°C"
+

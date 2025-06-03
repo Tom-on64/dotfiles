@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CLOCK=$(date '+%H:%M')
+
+case $BLOCK_BUTTON in
+	1) notify-send -t 10000 "$(date '+%b %d (%a) %H:%M')" "$(cal -m)" ;;
+esac
+
+echo "$CLOCK"
+

@@ -5,13 +5,13 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
         	"folke/neodev.nvim",
 	},
-	config = function() 
+	config = function()
 		local nvim_lsp = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		mason_lspconfig.setup_handlers({
+		mason_lspconfig.setup({
 			function(server)
 				nvim_lsp[server].setup({
 					capabilities = capabilities
@@ -23,6 +23,14 @@ return {
 					cmd = { "clangd", "--compile-commands-dir=." },
 				})
 			end
+		})
+
+		vim.diagnostic.config({
+			virtual_text = true,
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+			severity_sort = true,
 		})
 	end
 }

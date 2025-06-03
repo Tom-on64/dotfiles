@@ -1,0 +1,22 @@
+#!/bin/bash
+
+SINK="@DEFAULT_SINK@"
+VOLUME=$(wpctl get-volume $SINK)
+VOLUME_FLOAT=$(echo $VOLUME | awk '{print $2}')
+VOLUME_PERCENT=$(printf "%.0f" "$(echo "$VOLUME_FLOAT * 100" | bc)")
+
+if [ "$(wpctl get-volume "$SINK" | grep -c MUTED)" -ne 0 ]; then ICON=""
+elif (( VOLUME_PERCENT >= 70 )); then ICON=""
+elif (( VOLUME_PERCENT >= 30 )); then ICON=""
+else ICON=""
+fi
+
+case $BLOCK_BUTTON in
+	1) wpctl set-mute $SINK toggle ;;
+	2) setsid -f pavucontrol ;;
+	4) wpctl set-volume $SINK 1%+ ;;
+	5) wpctl set-volume $SINK 1%- ;;
+esac
+
+echo "$ICON $VOLUME_PERCENT%"
+

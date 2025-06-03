@@ -21,6 +21,10 @@ map("n", "<C-Right>", "<C-w>>")
 map("n", "<C-Up>", "<C-w>+")
 map("n", "<C-Down>", "<C-w>-")
 
+-- LSP --
+map("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>", opts)
+map("n", "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>", opts)
+
 -- Neotree --
 map("n", "<leader>e", "<CMD>Neotree toggle<CR>", opts)
 map("n", "<leader>r", "<CMD>Neotree focus<CR>", opts)

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+BATTERY=/sys/class/power_supply/BAT0
+
+case "$(cat $BATTERY/status)" in
+	"Full")		STATUS="";;
+	"Discharging")	STATUS="";;
+	"Charging")	STATUS="";;
+	"Not charging")	STATUS="";;
+	"Unknown")	STATUS="";;
+	*) exit 1 ;;
+esac
+
+PERCENT=$(cat "$BATTERY/capacity" 2>&1)
+
+case $BLOCK_BUTTON in
+	4) xbacklight +10 ;;
+	5) xbacklight -10 ;;
+esac
+
+echo "$STATUS $PERCENT%"
+
