@@ -1,0 +1,4 @@
+#!/bin/bash
+
+i3lock --nofork --image ~/Pictures/wallpaper/lock.png -f --pointer default
+

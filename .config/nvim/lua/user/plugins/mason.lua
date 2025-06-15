@@ -8,11 +8,11 @@ return {
 		require("mason-lspconfig").setup({
 			automatic_instalation = true,
 			ensure_installed = {
+				"clangd",
 				"cssls",
 				"eslint",
 				"html",
 				"jsonls",
-				"clangd",
 				"ltex",
 				"lua_ls",
 				"ts_ls",

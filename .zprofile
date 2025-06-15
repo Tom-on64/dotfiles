@@ -11,6 +11,10 @@ export BROWSER="firefox"
 export LESS="R --use-color -Dd+r -Du+b"
 export MANPAGER="less -$LESS"
 
+# Locale
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
 # XDG base dir spec
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"

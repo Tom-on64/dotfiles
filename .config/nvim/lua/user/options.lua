@@ -15,7 +15,10 @@ opt.autoindent = true
 opt.fileformat = "unix"
 opt.compatible = false
 opt.encoding = "utf-8"
+opt.fileencoding = "utf-8"
+opt.fileencodings = { "utf-8" }
 opt.wildmode = { "longest", "list", "full" }
 opt.splitbelow = true
 opt.termguicolors = true
+opt.syntax = "enable"
 

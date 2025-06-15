@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case $(printf 'shutdown\nreboot\nsleep\nkill' | dmenu -i -c -l 4) in
+	'shutdown') shutdown now ;;
+	'reboot') reboot ;;
+	'sleep') lockscreen ;;
+	'kill') ps -u $USER -o pid,comm,%cpu,%mem | dmenu -i -c -l 8 -p 'Kill:' | awk '{print $1}' | xargs -r kill ;;
+	*) exit 1 ;;
+esac
+
