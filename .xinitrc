@@ -1,8 +1,7 @@
 #!/bin/sh
 
-/usr/local/bin/display-switch.sh
+~/.config/scripts/display-switch
 
-# Keyboard layout to Czech QWERTY Mac
 setxkbmap -layout cz -variant qwerty-mac
 
 xset s 300 # 5 minutes

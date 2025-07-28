@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export DISPLAY=:0
+export XAUTHORITY=/home/tomas/.Xauthority
+
+if xrandr | grep 'HDMI1 connected'; then
+	xrandr --output 'HDMI1' --primary --auto --output 'eDP1' --off
+else
+	xrandr --output 'eDP1' --primary --auto
+fi
+

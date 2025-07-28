@@ -14,32 +14,36 @@ family = "BigBlueTermPlus Nerd Font"
 style = "Regular"
 
 [colors.primary]
-foreground = "#c7c7c7"
-background = "#000000"
+background = '#1d2021'
+foreground = '#ebdbb2'
 
 [colors.normal]
-black 	= "#000000"
-red 	= "#dd0000"
-green	= "#00dd00"
-yellow	= "#dddd00"
-blue	= "#0000dd" 
-magenta	= "#dd00dd"
-cyan	= "#00dddd"
-white	= "#dddddd"
+black =	'#282828'
+red =	'#cc241d'
+green =	'#98971a'
+yellow ='#d79921'
+blue =	'#458588'
+magenta='#b16286'
+cyan =	'#689d6a'
+white =	'#a89984'
 
 [colors.bright]
-black 	= "#666666"
-red 	= "#ff6666"
-green	= "#66ff66"
-yellow	= "#ffff66"
-blue	= "#6666ff" 
-magenta	= "#ff66ff"
-cyan	= "#66ffff"
-white	= "#ffffff"
+black =	'#928374'
+red =	'#fb4934'
+green =	'#b8bb26'
+yellow ='#fabd2f'
+blue =	'#83a598'
+magenta='#d3869b'
+cyan =	'#8ec07c'
+white =	'#ebdbb2'
 
 [colors.cursor]
-cursor = "#ffffff"
-text = "#000000"
+text = '#1D2021'
+cursor = '#EBDBB2'
+
+[colors.selection]
+text = '#1D2021'
+background = '#EBDBB2'
 
 [cursor.style]
 shape = "Block"

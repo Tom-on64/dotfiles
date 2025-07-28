@@ -1,0 +1,60 @@
+#!/bin/sh
+
+set -e
+
+log() {
+	printf "[%s] %s\n" "$(date +%Y-%m-%dT%H:%M:%S)" "$1"
+}
+
+# Ensure script is not run as root
+if [ "$(id -u)" -eq 0 ]; then
+	log "Do not run this script as root."
+	exit 1
+fi
+
+log "Starting system maintenance..."
+
+log "Updating system packages..."
+yay -Syu --noconfirm
+
+log "Clearing pacman package cache..."
+pm_cache="$(du -sh /var/cache/pacman/pkg | cut -f1)"
+paccache -r
+log "Cleaned $pm_cache from pacman cache."
+
+log "Removing orphan packages..."
+orphans=$(yay -Qdtq)
+if [ -n "$orphans" ]; then
+	echo "$orphans" | yay -Rns --noconfirm -
+	log "Removed orphan packages."
+else
+	log "No orphan packages to remove."
+fi
+
+log "Removing unused dependencies (explicit pacman cleanup)..."
+sudo pacman -Rns $(pacman -Qtdq 2>/dev/null) 2>/dev/null || log "No unused dependencies found."
+
+log "Clearing user cache in ~/.cache..."
+home_cache="$(du -sh ~/.cache 2>/dev/null | cut -f1)"
+rm -rf ~/.cache
+log "Cleaned $home_cache from ~/.cache."
+
+log "Cleaning systemd journal logs older than 7 days..."
+sudo journalctl --vacuum-time=7d
+log "Journal logs vacuumed."
+
+log "Setting maximum journal size to 100MB..."
+sudo journalctl --vacuum-size=100M
+
+if command -v flatpak >/dev/null 2>&1; then
+	log "Cleaning up Flatpak..."
+	flatpak uninstall --unused -y || log "No unused Flatpak packages."
+fi
+
+log "Displaying disk usage after cleanup:"
+df -h /
+
+log "Displaying system uptime:"
+uptime
+
+log "System maintenance complete."
