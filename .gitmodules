@@ -1,6 +1,0 @@
-[submodule ".config/dwm"]
-	path = .config/dwm
-	url = https://github.com/Tom-on64/dwm.git
-[submodule ".config/dwmblocks"]
-	path = .config/dwmblocks
-	url = https://github.com/Tom-on64/dwmblocks.git

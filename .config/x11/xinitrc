@@ -15,4 +15,3 @@ exec picom -b &
 
 # Run DWM
 exec dwm
-

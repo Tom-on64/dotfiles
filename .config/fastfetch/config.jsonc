@@ -42,47 +42,47 @@
         },
         {
             "type": "separator",
-            "string": "⎯",
+            "string": "=",
             "outputColor": "magenta"
         },
         {
-            "key": "OS      ",
+            "key": "OS\t",
             "type": "os",
             "format": "{2} {8} {12}"
         },
         {
-            "key": "Kernel  ",
+            "key": "Kernel\t",
             "type": "kernel",
             "format": "{1} {2}"
         },
         {
-            "key": "Uptime  ",
+            "key": "Uptime\t",
             "type": "uptime",
             "format": "{1}d {2}h {3}m"
         },
         {
-            "key": "Shell   ",
+            "key": "Shell\t",
             "type": "shell",
             "format": "{3} {4} @ tty{8}"
         },
         {
-            "key": "Display ",
+            "key": "Display",
             "type": "display",
             "order": "desc",
             "format": "{1}x{2} @ {3} Hz"
         },
         {
-            "key": "CPU     ",
+            "key": "CPU\t",
             "type": "cpu",
             "format": "{1}"
         },
         {
-            "key": "GPU     ",
+            "key": "GPU\t",
             "type": "gpu",
             "format": "{2}"
         },
         {
-            "key": "Memory  ",
+            "key": "Memory\t",
             "type": "memory",
             "format": "{1} / {2} ({3})"
         },
