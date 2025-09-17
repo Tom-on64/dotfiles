@@ -5,7 +5,7 @@ NOTEDIR="$HOME/Documents/notes"
 newnote() {
 	file=$(printf '' | dmenu -c -p 'New note:' <&-) || exit 0
 	: "${file:=$(date '+%Y-%m-%d')}"
-	setsid -f "$TERM" -e nvim $NOTEDIR/$file.txt >/dev/null 2>&1
+	setsid -f "$TERM" -e "$EDITOR" $NOTEDIR/$file.txt >/dev/null 2>&1
 }
 
 choice=$(printf "New\n$(command ls -t1 $NOTEDIR)" | dmenu -c -l 8 -p 'Note:')

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+FILENAME="$(date '+%s').mp4"
+FILEPATH="$HOME/Movies/recordings/$FILENAME"
+
+capture_start() {
+	amixer set Capture toggle
+	ffmpeg -f x11grab -s "$(xdpyinfo | awk '/dimensions/{print $2}')" -r 30 -i $DISPLAY \
+		-f alsa -i default \
+		-c:v libx264 -preset ultrafast -pix_fmt yuv420p \
+		-c:a aac "$FILEPATH" &
+	echo $! > /tmp/recpid
+	notify-send -t 600 "Started recording to $FILENAME."
+}
+
+capture_end() {
+	kill -15 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
+	amixer set Capture toggle
+	notify-send -t 600 "Ended recording."
+}
+
+([[ -f /tmp/recpid ]] && capture_end && exit 0) || capture_start
+

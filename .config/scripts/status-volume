@@ -6,7 +6,7 @@ VOLUME_FLOAT=$(echo $VOLUME | awk '{print $2}')
 VOLUME_PERCENT=$(printf "%.0f" "$(echo "$VOLUME_FLOAT * 100" | bc)")
 
 if [ "$(wpctl get-volume "$SINK" | grep -c MUTED)" -ne 0 ]; then ICON=""
-elif (( VOLUME_PERCENT >= 70 )); then ICON=""
+elif (( VOLUME_PERCENT >= 60 )); then ICON=""
 elif (( VOLUME_PERCENT >= 30 )); then ICON=""
 else ICON=""
 fi

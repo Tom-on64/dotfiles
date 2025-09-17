@@ -11,10 +11,13 @@ cp $HOME/.zprofile .
 mkdir -p ./.config
 cp -r $XDG_CONFIG_HOME/alacritty ./.config
 cp -r $XDG_CONFIG_HOME/fastfetch ./.config
+cp -r $XDG_CONFIG_HOME/mpd ./.config
 cp -r $XDG_CONFIG_HOME/nvim ./.config && rm -f ./.config/nvim/lazy-lock.json
 cp -r $XDG_CONFIG_HOME/scripts ./.config
 cp -r $XDG_CONFIG_HOME/zsh ./.config && rm -fr ./.config/zsh/.zcompdump*
 cp -r $XDG_CONFIG_HOME/dunst ./.config
 cp -r $XDG_CONFIG_HOME/picom ./.config
 cp -r $XDG_CONFIG_HOME/x11 ./.config
+cp -r $XDG_CONFIG_HOME/user-dirs.dirs ./.config
+cp -r $XDG_CONFIG_HOME/user-dirs.locale ./.config
 

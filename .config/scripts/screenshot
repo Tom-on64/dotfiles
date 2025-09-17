@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-export DISPLAY=:0
+set -euo pipefail
+export DISPLAY="${DISPLAY:-:0}"
+
 FILENAME="$(date '+%s').png"
 FILEPATH="$HOME/Pictures/screenshots/$FILENAME"
 

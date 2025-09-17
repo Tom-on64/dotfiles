@@ -51,6 +51,9 @@ if command -v flatpak >/dev/null 2>&1; then
 	flatpak uninstall --unused -y || log "No unused Flatpak packages."
 fi
 
+log "Cleaning ~/Downloads."
+rm -rf ~/Downloads/* ~/Downloads/.*
+
 log "Displaying disk usage after cleanup:"
 df -h /
 
@@ -58,3 +61,4 @@ log "Displaying system uptime:"
 uptime
 
 log "System maintenance complete."
+

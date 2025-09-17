@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# List all .desktop files in the standard locations
+find ~/.local/share/applications /usr/share/applications -name "*.desktop" 2>/dev/null \
+| while read -r desktop_file; do
+	# Extract the Name= field
+	name=$(grep -m 1 '^Name=' "$desktop_file" | cut -d= -f2-)
+	echo "$name###$desktop_file"
+done | sort -u | awk -F'###' '{print $1}' \
+| dmenu -c -i -l 8 -p ">" \
+| while read -r chosen; do
+	# Find the corresponding .desktop file again
+	file=$(find ~/.local/share/applications /usr/share/applications -name "*.desktop" \
+		-exec grep -m 1 -H "^Name=$chosen" {} \; | cut -d: -f1 | head -n 1)
+	# Extract the Exec= command and run it
+	cmd=$(grep -m 1 '^Exec=' "$file" | cut -d= -f2- | sed 's/ *%[fFuUdDnNickvm]//g')
+	setsid sh -c "$cmd" >/dev/null 2>&1 &
+done
+

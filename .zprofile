@@ -39,10 +39,14 @@ export XRESOURCES="$XDG_CONFIG_HOME/x11/xresources"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME/java"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export FFMPEG_DATADIR="$XDG_CONFIG_HOME/ffmpeg"
+export SVN_CONFIG_DIR=$XDG_CONFIG_HOME/subversion
+export WAKATIME_HOME=$XDG_CONFIG_HOME
+export PARALLEL_HOME=$XDG_CONFIG_HOME/parallel
+export FEHBG_PATH=$XDG_CONFIG_HOME/feh/fehbg
 
 # Stuff in XDG_DATA_HOME
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
@@ -51,9 +55,12 @@ export GOPATH="$XDG_DATA_HOME/go"
 export GOBIN="$GOPATH/bin"
 export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
 export WINEPREFIX="$XDG_DATA_HOME/wine"
+export DOTNET_CLI_HOME=$XDG_DATA_HOME/dotnet
+export JAVA_TOOL_OPTIONS="-Duser.home=$XDG_DATA_HOME/java"
 
 # Stuff in XDG_CACHE_HOME
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+export ZSH_COMPDUMP=$XDG_CACHE_HOME/zsh/zcompdump-$HOST
 
 # Fuzzy find
 export FZF_DEFAULT_OPTS="--style minimal --color 16 --layout reverse --height 30% --preview='head {}'"
