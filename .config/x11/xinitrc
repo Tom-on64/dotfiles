@@ -1,16 +1,17 @@
 #!/bin/sh
 
 setxkbmap -layout cz -variant qwerty-mac
-xmodmap -e "keycode 212 = z"		# Map my F4 key to z (because it's broken on my keyboard)
-xmodmap -e "keycode 169 = Delete"	# Map the idk what this does key to Delete :)
+xinput set-prop 'pointer:bcm5974' 'libinput Disable While Typing Enabled' 0
+xmodmap $XDG_CONFIG_HOME/x11/xmodmap
 xset s 300 # 5 minutes
+/etc/acpi/lid.sh
+wallpaper
 
-# Setup outputs
-display-setup
-
+# Run daemons 
 exec dwmblocks &
 exec xss-lock --transfer-sleep-lock -- lockscreen &
 exec picom -b &
 
-# Run DWM
+# Run WM
 exec dwm
+

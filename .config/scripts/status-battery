@@ -15,8 +15,8 @@ PERCENT=$(cat "$BATTERY/capacity" 2>&1)
 
 case $BLOCK_BUTTON in
 	1) dmenu-system ;;
-	4) xbacklight +10 ;;
-	5) xbacklight -10 ;;
+	4) brightnessctl -q s +5% ;;
+	5) brightnessctl -q s 5%- ;;
 esac
 
 echo "$STATUS $PERCENT%"

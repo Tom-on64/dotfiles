@@ -4,7 +4,7 @@ set -euo pipefail
 export DISPLAY="${DISPLAY:-:0}"
 
 FILENAME="$(date '+%s').png"
-FILEPATH="$HOME/Pictures/screenshots/$FILENAME"
+FILEPATH="$HOME/Pictures/Screenshots/$FILENAME"
 
 scrot --select $FILEPATH || exit 1
 notify-send "Screenshot taken!" "Saved as $FILENAME."

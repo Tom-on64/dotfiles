@@ -1,0 +1,4 @@
+#!/bin/sh
+
+asciinema rec $HOME/Movies/asciinema/$(date '+%s').cast
+

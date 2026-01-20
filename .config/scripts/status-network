@@ -1,0 +1,49 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+	1) setsid -f "$TERM" -e "nmtui" ;;
+esac
+
+# Find active interface managed by NetworkManager
+iface=$(nmcli -t -f DEVICE,STATE dev | grep ':connected' | cut -d: -f1 | head -n1)
+
+# If no interface found, output disconnected
+[ -z "$iface" ] && echo "󰤭 Offline" && exit 0
+
+# Check internet connectivity (1 second timeout, 1 packet)
+if ! ping -c1 -W1 1.1.1.1 >/dev/null 2>&1; then
+	echo "󰤭 Offline"
+	exit 0
+fi
+
+# File paths for RX/TX bytes
+rx_file="/sys/class/net/$iface/statistics/rx_bytes"
+tx_file="/sys/class/net/$iface/statistics/tx_bytes"
+
+# Read initial values
+rx_prev=$(cat "$rx_file")
+tx_prev=$(cat "$tx_file")
+sleep 1
+rx_now=$(cat "$rx_file")
+tx_now=$(cat "$tx_file")
+
+# Calculate differences (bytes/sec)
+rx_diff=$((rx_now - rx_prev))
+tx_diff=$((tx_now - tx_prev))
+
+# Convert to human-readable units
+human() {
+	val=$1
+	if [ "$val" -lt 1024 ]; then
+		printf "%dB/s" "$val"
+	elif [ "$val" -lt 1048576 ]; then
+		printf "%.1fK/s" "$(echo "$val / 1024" | bc -l)"
+	else
+		printf "%.1fM/s" "$(echo "$val / 1048576" | bc -l)"
+	fi
+}
+
+rx_human=$(human "$rx_diff")
+tx_human=$(human "$tx_diff")
+
+echo "↓$rx_human ↑$tx_human"

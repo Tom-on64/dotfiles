@@ -1,6 +1,6 @@
 #!/bin/bash
 
-case $(printf 'shutdown\nreboot\nsleep\nkill' | dmenu -i -c -l 4) in
+case $(printf 'shutdown\nreboot\nsleep\nkill' | dmenu -i -c -l 8) in
 	'shutdown') shutdown now ;;
 	'reboot') reboot ;;
 	'sleep') lockscreen ;;

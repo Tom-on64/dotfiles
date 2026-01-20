@@ -1,0 +1,16 @@
+#!/bin/sh
+
+PIDFILE=/tmp/oneko.pid
+
+if [[ $BLOCK_BUTTON = 1 ]]; then
+	if [[ -e $PIDFILE ]]; then
+		kill $(cat $PIDFILE)
+		rm $PIDFILE
+	else
+		oneko &
+		echo "$!" > $PIDFILE
+	fi
+fi
+
+echo "󰄛 "
+

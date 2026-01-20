@@ -22,7 +22,15 @@ return {
 					capabilities = capabilities,
 					cmd = { "clangd", "--compile-commands-dir=." },
 				})
-			end
+			end,
+			["spyglassmc_language_server"] = function()
+				nvim_lsp["spyglassmc_language_server"].setup({
+					root_dir = function(fname)
+					return lspconfig.util.root_pattern("pack.mcmeta", "data")(fname)
+						or lspconfig.util.root_pattern(".git")(fname)
+				end,
+				})
+			end,
 		})
 
 		vim.diagnostic.config({

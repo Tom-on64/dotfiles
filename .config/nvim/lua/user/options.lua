@@ -22,3 +22,10 @@ opt.splitbelow = true
 opt.termguicolors = true
 opt.syntax = "enable"
 
+vim.filetype.add {
+	extension = {
+		mcfunction = "mcfunction",
+	},
+}
+
+

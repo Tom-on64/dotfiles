@@ -1,0 +1,7 @@
+! Natural scrolling
+pointer = 1 2 3 4 5 6 7 8 9 10
+! Map my F4 key to z (because it's broken on my keyboard)
+keycode 212 = z		
+! Map the idk what this does key to Delete :)
+keycode 169 = Delete	
+
