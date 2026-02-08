@@ -1,7 +1,7 @@
 export ZSH="$HOME/.config/oh-my-zsh"
 
 ZSH_THEME="bira"
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="%d/%m/%y"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 
 source $ZSH/oh-my-zsh.sh
@@ -26,4 +26,6 @@ alias df='df -h'
 alias ':q'='exit'
 alias bird-from-egypt='echo -e "\xf0\x93\x85\xb1"'
 alias dosbox='dosbox -conf ~/.config/dosbox/dosbox.conf'
+alias kbd-cz='setxkbmap -layout cz -variant qwerty-mac'
+alias kbd-us='setxkbmap -layout us'
 
