@@ -32,3 +32,7 @@ map("n", "<leader>r", "<CMD>Neotree focus<CR>", opts)
 -- Utility --
 map("i", "jk", "<ESC>", opts)
 
+-- Format --
+map("n", "<leader>f", function()
+	vim.lsp.buf.format({ async = false })
+end)

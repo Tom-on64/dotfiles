@@ -35,8 +35,9 @@ export PATH="$PATH:$XDG_CONFIG_HOME/scripts"
 
 # Stuff in XDG_CONFIG_HOME
 export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
-export XPROFILE="$XDG_CONFIG_HOME/x11/xprofile"
-export XRESOURCES="$XDG_CONFIG_HOME/x11/xresources"
+export XPROFILE="$XDG_CONFIG_HOME/x11/Xprofile"
+export XAUTHORITY="$XDG_CONFIG_HOME/x11/Xresources"
+export XRESOURCES="$XDG_CONFIG_HOME/x11/Xauthority"
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc-2.0"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
-i3lock -efn -i ~/Pictures/Wallpaper/lock.png -p default
+i3lock -efn -i ~/Pictures/Wallpaper/lock.png -p default &
 
