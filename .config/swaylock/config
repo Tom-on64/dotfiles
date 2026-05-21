@@ -1,0 +1,25 @@
+image=~/Media/Wallpapers/ultrakill.png
+scaling=fill
+ring-color=#540000DD
+ring-clear-color=#742222DD
+ring-caps-lock-color=#CC1122DD
+ring-ver-color=#DD0011DD
+ring-wrong-color=#440000DD
+line-color=#540000DD
+line-clear-color=#742222DD
+line-caps-lock-color=#CC1122DD
+line-ver-color=#DD0011DD
+line-wrong-color=#440000DD
+inside-color=#540000DD
+inside-clear-color=#742222DD
+inside-caps-lock-color=#CC1122DD
+inside-ver-color=#DD0011DD
+inside-wrong-color=#440000DD
+separator-color=#540000
+indicator-radius=64
+text-color=#FFEEEE
+font=JetBrains Mono
+font-size=12
+show-failed-attempts
+indicator-caps-lock
+

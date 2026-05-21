@@ -24,6 +24,7 @@ cp -r $XDG_CONFIG_HOME/pcmanfm ./.config
 cp -r $XDG_CONFIG_HOME/picom ./.config
 cp -r $XDG_CONFIG_HOME/rmpc ./.config
 cp -r $XDG_CONFIG_HOME/rofi ./.config
+cp -r $XDG_CONFIG_HOME/swaylock ./.config
 cp -r $XDG_CONFIG_HOME/waybar ./.config
 cp -r $XDG_CONFIG_HOME/x11 ./.config
 cp -r $XDG_CONFIG_HOME/user-dirs.dirs ./.config
