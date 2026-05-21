@@ -18,6 +18,7 @@ return {
 				"typescript",
 				"html",
 				"css",
+				"svelte",
 				"markdown",
 				"markdown_inline",
 				"bash",
@@ -25,6 +26,8 @@ return {
 				"vim",
 				"c",
 				"cpp",
+				"c_sharp",
+				"glsl",
 			},
 			incremental_selection = {
 				enable = true,

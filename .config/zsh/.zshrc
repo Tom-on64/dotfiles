@@ -20,10 +20,17 @@ alias dir='ls -lah'
 alias del='rm -fr'
 alias ren='mv -r'
 alias cls='clear'
+
+alias df='df -h'
+alias cat='bat'
+alias find='fd'
+
 alias gst='echo -e "\e[36mGit status:"; git status -s'
 alias gcm='git commit -m'
-alias df='df -h'
+
 alias ':q'='exit'
 alias bird-from-egypt='echo -e "\xf0\x93\x85\xb1"'
+alias fuck='sudo $(fc -ln -1)'
+
 alias dosbox='dosbox -conf ~/.config/dosbox/dosbox.conf'
 
