@@ -1,0 +1,70 @@
+{
+	"layer": "top",       
+	"spacing": 4,   
+	"modules-left": [
+		"ext/workspaces",
+		"dwl/window"
+	],
+	"modules-center": [],
+	"modules-right": [
+		"network",
+		"cpu",
+		"memory",
+		"pulseaudio",
+		"clock",
+		"battery"
+	],
+	"dwl/window": {
+		"format": "[{layout}] {title}"
+	},
+	"ext/workspaces": {
+		"format": "{icon}",
+		"ignore-hidden": true,
+		"on-click": "activate",
+		"on-click-right": "deactivate",
+		"on-scroll-up":"mmsg -d viewtoleft_have_client",
+		"on-scroll-down":"mmsg -d viewtoright_have_client",
+		"sort-by-id": true,
+		"format-icons": {
+			"1": "I",
+			"2": "II",
+			"3": "III",
+			"4": "IV",
+			"5": "V",
+			"6": "VI",
+			"7": "VII",
+			"8": "VIII",
+			"9": "IX",
+			"urgent": "!!"
+		}
+	},
+	"network": {
+		"interval": 2,
+		"format-wifi": "WLAN: {essid}",
+		"format-ethernet": "ETH: {ifname}",
+		"format-linked": "LINK: No IP ({ifname})",
+		"format-disconnected": "NET: Disconnected",
+		"tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
+		"format-alt": "↓{bandwidthDownBytes} ↑{bandwidthUpBytes}"
+	},
+	"clock": {
+		"interval": 1,
+		"format": "{:%H:%M:%S}",
+		"tooltip-format": "{:%d. %b. %Y}"
+	},
+	"cpu": {
+		"interval": 2,
+		"format": "CPU: {load}%"
+	},
+	"memory": {
+		"format": "MEM: {}%"
+	},
+	"battery": {
+		"format": "{capacity}%"
+	},
+	"pulseaudio": {
+		"format": "VOL: {volume}%",
+		"format-muted": "VOL: Muted",
+		"tooltip": false
+	}
+}

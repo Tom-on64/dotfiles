@@ -1,0 +1,69 @@
+@define-color color-bg		#0B0000;
+@define-color color-fg		#FFEEEE;
+@define-color color-secondary	#B4AAAA;
+@define-color color-border	#540000;
+@define-color color-important	#BB1122;
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 14px;
+	min-height: 0;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+window#waybar {
+	background: none;
+	color: @color-fg;
+}
+
+#workspaces button {
+	min-width: 2.4em;
+	min-height: 2.4em;
+	padding: 0 0.2em 0 0.2em;
+	margin: 0;
+	background: @color-bg;
+	color: @color-fg;
+	border-right: 2px solid @color-border;
+	transition: color 50ms, background 50ms;
+}
+#workspaces button:first-child { margin-left: 0.4em; }
+#workspaces button:last-child { border-right: none; }
+
+#workspaces button.active {
+	color: @color-bg;
+	background: @color-secondary;
+}
+
+#workspaces button.urgent {
+	color: @color-fg;
+	background: @color-important;
+}
+
+#workspaces button:hover {
+	color: @color-important;
+}
+
+
+#window {
+	margin: 0 2em 0 2em;
+}
+
+#network,
+#cpu,
+#memory,
+#pulseaudio,
+#clock,
+#battery {
+	padding-right: 0.5em;
+	margin-right: 0.5em;
+	border-right: 2px solid @color-border;
+	background: @color-bg;
+}
+#battery {
+	margin-right: 0;
+	border-right: none;
+}
+
