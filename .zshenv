@@ -2,18 +2,19 @@
 # Zsh config in ~/.config/zsh
 
 # Default programs
-export EDITOR="nvim"
+export EDITOR="vim"
 export TERM="alacritty"
 export TERMINAL=$TERM
 export MUSPLAYER="vlc"
-export BROWSER="floorp"
+export BROWSER="firefox"
 export LESS="R --use-color -Dd+r -Du+b"
 export MANPAGER="less -$LESS"
-export FILE_MANAGER="pcmanfm"
+export FILE_MANAGER="nnn-open"
 export FM="$FILE_MANAGER"
 
 # Locale
 export LANG="en_US.UTF-8"
+export LC_ALL="cs_CZ.UTF-8"
 
 # XDG base dir spec
 export XDG_DATA_HOME="$HOME/.local/share"
