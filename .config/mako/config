@@ -1,0 +1,9 @@
+background-color=#1D000088
+text-color=#C48888
+border-color=#540000
+border-size=2
+border-radius=8
+font=FiraCode Nerd Font Mono
+
+[urgency=high]
+border-color=#BB1122

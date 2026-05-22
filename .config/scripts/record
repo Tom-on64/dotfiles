@@ -3,23 +3,19 @@
 FILENAME="$(date '+%s').mp4"
 FILEPATH="$HOME/Movies/recordings/$FILENAME"
 
+mkdir -p "$HOME/Movies/recordings"
 AUDIO_SRC="$(pactl get-default-sink).monitor"
 
 capture_start() {
-	PULSE_PROP="media.name=screen_record" \
-	ffmpeg -f x11grab \
-		-s "$(xdpyinfo | awk '/dimensions/{print $2}')" \
-		-r 30 -i "$DISPLAY" \
-		-f pulse -i "$AUDIO_SRC" \
-		-c:v libx264 -preset ultrafast -pix_fmt yuv420p \
-		-c:a aac "$FILEPATH" &
-	echo $! > /tmp/recpid
-	notify-send -t 600 "Started recording to $FILENAME."
+    wf-recorder -a "$AUDIO_SRC" -f "$FILEPATH" &
+    
+    echo $! > /tmp/recpid
+    notify-send -t 600 "Started recording to $FILENAME."
 }
 
 capture_end() {
-	kill -15 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
-	notify-send -t 600 "Ended recording."
+    kill -2 "$(cat /tmp/recpid)" && rm -f /tmp/recpid
+    notify-send -t 600 "Ended recording."
 }
 
 ([[ -f /tmp/recpid ]] && capture_end && exit 0) || capture_start

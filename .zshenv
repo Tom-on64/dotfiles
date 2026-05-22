@@ -3,7 +3,7 @@
 
 # Default programs
 export EDITOR="nvim"
-export TERM="alacritty"
+export TERM="foot"
 export TERMINAL=$TERM
 export MUSPLAYER="vlc"
 export BROWSER="floorp"

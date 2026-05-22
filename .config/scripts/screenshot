@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-export DISPLAY="${DISPLAY:-:0}"
-
 FILENAME="$(date '+%s').png"
-FILEPATH="$HOME/Pictures/Screenshots/$FILENAME"
+FILEPATH="$(xdg-user-dir PICTURES)/Screenshots/$FILENAME"
 
-scrot --select $FILEPATH || exit 1
-notify-send "Screenshot taken!" "Saved as $FILENAME."
+g=$(slurp -d)
+if [ -n "$g" ]; then
+	grim -g "$g" "$FILEPATH"
+	notify-send "Screenshot taken!" "Saved as $FILENAME."
+fi
 
