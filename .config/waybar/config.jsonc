@@ -1,21 +1,27 @@
 {
-	"layer": "top",       
-	"spacing": 4,   
+	"reload_style_on_change": true,
+	"position": "top",
+	"margin-top": 0,
+	"margin-bottom": 0,
+	"spacing": 0,
 	"modules-left": [
 		"ext/workspaces",
+		"custom/separator",
 		"dwl/window"
 	],
 	"modules-center": [],
 	"modules-right": [
+		"mpd",
 		"network",
-		"cpu",
-		"memory",
+		"backlight",
 		"pulseaudio",
-		"clock",
-		"battery"
+		"battery",
+		"custom/separator",
+		"clock"
 	],
-	"dwl/window": {
-		"format": "[{layout}] {title}"
+	"custom/separator": {
+		"format": "",
+		"tooltip": false
 	},
 	"ext/workspaces": {
 		"format": "{icon}",
@@ -36,35 +42,80 @@
 			"8": "VIII",
 			"9": "IX",
 			"urgent": "!!"
-		}
+		},
+		"justify": "left"
+	},
+	"dwl/window": {
+		"format": "[{layout}] {title}",
+		"tooltip-format": "{app_id}"
+	},
+	"mpd": {
+		"server": "127.0.0.1",
+		"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+		"format-stopped": "󰝚 Stopped",
+		"format-disconnected": "󰝚 Disconnected",
+		"tooltip-format": "MPD: Connected",
+		"tooltip-format-disconnected": "MPD: Disconnected",
+		"interval": 2,
+		"unknown-tag": "N/A",
+		"consume-icons":{ "on": "" },
+		"random-icons": { "on": "󰒟" },
+		"repeat-icons": { "on": "󰑖" },
+		"single-icons": { "on": "󰑘" },
+		"state-icons": { "paused": "(paused)" },
+		"on-click": "mpc toggle",
+		"on-click-right": "mpc next",
+		"justify": "center"
 	},
 	"network": {
-		"interval": 2,
-		"format-wifi": "WLAN: {essid}",
-		"format-ethernet": "ETH: {ifname}",
-		"format-linked": "LINK: No IP ({ifname})",
-		"format-disconnected": "NET: Disconnected",
+		"format": "{icon} ⇣{bandwidthDownBytes} ⇡{bandwidthUpBytes}",
+		"format-disconnected": "󰣼 Disconnected",
+		"format-icons": [ "󰣾", "󰣴", "󰣶", "󰣸", "󰣺" ],
 		"tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
-		"format-alt": "↓{bandwidthDownBytes} ↑{bandwidthUpBytes}"
+		"tooltip-format-disconnected": "Disconnected",
+		"justify": "center"
 	},
-	"clock": {
-		"interval": 1,
-		"format": "{:%H:%M:%S}",
-		"tooltip-format": "{:%d. %b. %Y}"
-	},
-	"cpu": {
-		"interval": 2,
-		"format": "CPU: {load}%"
-	},
-	"memory": {
-		"format": "MEM: {}%"
-	},
-	"battery": {
-		"format": "{capacity}%"
+	"backlight": {
+		"device": "amdgpu_bl1",
+		"format": "{icon} {percent}%",
+		"tooltip-format": "🌕 {percent}%",
+		"format-icons": [ "󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠" ],
+		"justify": "center"
 	},
 	"pulseaudio": {
-		"format": "VOL: {volume}%",
-		"format-muted": "VOL: Muted",
-		"tooltip": false
+		"format": "{icon} {volume}%",
+		"format-muted": "󰝟 {volume}%",
+		"tooltip": false,
+		"format-icons": {
+			"default": ["󰕿", "󰖀", "󰕾"]
+		},
+		"on-click": "volume toggle",
+		"on-click-right": "pwvucontrol",
+		"on-scroll-up": "volume up",
+		"on-scroll-down": "volume down",
+		"justify": "center"
+	},
+	"battery": {
+		"format": "{icon} {capacity}%",
+		"format-icons": {
+			"charging": [ "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅" ],
+			"default": [ "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ]
+		},
+		"justify": "center"
+	},
+	"clock": {
+		"format": "{:%H:%M %d/%m}",
+		"tooltip-format": "{calendar}",
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"on-click-right": "mode",
+			"format": {
+				"month": "<span color='#FFEEEE'>{}</span>",
+				"weekday": "<span color='#FFEEEE'>{}</span>",
+				"today": "<span color='#BB1122'>{}</span>"
+			}
+		},
+		"justify": "right"
 	}
 }

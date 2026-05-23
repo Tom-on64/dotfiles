@@ -52,18 +52,22 @@ window#waybar {
 	margin: 0 2em 0 2em;
 }
 
+#separator {
+
+}
+
+#mpd,
 #network,
-#cpu,
-#memory,
+#backlight,
 #pulseaudio,
-#clock,
-#battery {
+#battery,
+#clock {
 	padding-right: 0.5em;
 	margin-right: 0.5em;
 	border-right: 2px solid @color-border;
 	background: @color-bg;
 }
-#battery {
+#clock {
 	margin-right: 0;
 	border-right: none;
 }

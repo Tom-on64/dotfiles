@@ -1,0 +1,10 @@
+#!/bin/sh
+
+SINK="@DEFAULT_SINK@"
+
+case "$1" in
+	'up') wpctl set-volume $SINK 5%+ ;;
+	'down') wpctl set-volume $SINK 5%- ;;
+	'toggle') wpctl set-mute $SINK toggle ;;
+esac
+
