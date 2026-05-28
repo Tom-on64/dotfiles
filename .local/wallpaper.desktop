@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Wallpaper
+Comment=Change the wallpaper
+Exec=/home/tomas/.config/scripts/wallpaper
+Terminal=false
+Categories=Utility;System;

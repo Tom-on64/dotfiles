@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Swaylock
+Comment=A simple screen locker for Wayland
+Exec=/usr/bin/swaylock
+Terminal=false
+Categories=Utility;System;

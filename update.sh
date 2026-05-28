@@ -29,3 +29,10 @@ cp -r $XDG_CONFIG_HOME/user-dirs.locale ./.config
 mkdir -p ./etc
 cp -r /etc/ly ./etc
 
+# Custom .desktop entries
+mkdir -p ./.local/share/applications
+cp $XDG_DATA_HOME/applications/screenshot.desktop ./.local
+cp $XDG_DATA_HOME/applications/swaylock.desktop ./.local
+cp $XDG_DATA_HOME/applications/record.desktop ./.local
+cp $XDG_DATA_HOME/applications/wallpaper.desktop ./.local
+

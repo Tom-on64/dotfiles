@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Record
+Comment=Begin or end a screen recording
+Exec=/home/tomas/.config/scripts/record
+Terminal=false
+Categories=Utility;System;

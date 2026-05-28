@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-FILENAME=$(date "+%Y-%m-%d.md")
-
-exec $EDITOR $FILENAME
-
