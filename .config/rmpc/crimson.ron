@@ -93,7 +93,11 @@
 						default: (kind: Text("No Song"), style: (fg: "#BB1122", modifiers: "Bold"))
 					)
 				],
-				right: []
+				right: [
+					(kind: Text("["), style: (fg: "#540000", modifiers: "Bold")),
+					(kind: Text("dih"), style: (fg: "#EDCECE", modifiers: "Bold")),
+					(kind: Text("]"), style: (fg: "#540000", modifiers: "Bold"))
+				]
 			),
 			(
 				left: [

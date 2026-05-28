@@ -1,6 +1,7 @@
 #!/bin/sh
 
-swaybg -i ~/Media/Wallpapers/ultrakill.png -m fill &
+awww-daemon &
+awww img "$(xdg-user-dir PICTURES)/Wallpapers/ultrakill.png"
 
 swayidle -w timeout 300 'swaylock' &
 

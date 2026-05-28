@@ -1,4 +1,16 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-feh --bg-fill --no-fehbg --randomize $HOME/Pictures/Wallpaper/wall*.png
+# Directories
+WALLPAPERS="$(xdg-user-dir PICTURES)/Wallpapers"
+# simple | fade | left | right | top | bottom | wipe | grow | center | outer | random | wave
+TRANSITION_TYPE="wipe" 
 
+SELECTION=$(ls "$WALLPAPERS" | rofi -dmenu -i -p "Wallpaper")
+
+# If an image was selected, apply it via swww
+if [ -n "$SELECTION" ]; then
+    awww img "$WALLPAPERS/$SELECTION" \
+        --transition-type "$TRANSITION_TYPE" \
+        --transition-fps 60 \
+        --transition-duration 1.5
+fi

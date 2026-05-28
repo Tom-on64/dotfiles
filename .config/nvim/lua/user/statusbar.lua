@@ -1,14 +1,16 @@
 local opt = vim.opt
 
 opt.laststatus = 2
-opt.statusline = ""
 
-opt.statusline:append("%m ")		-- Modified flag
-opt.statusline:append("%.20f ")		-- Filename (limit to 20 chars)
-opt.statusline:append("%y")		-- Filetype
-opt.statusline:append("%=")		-- Separator to right-aligned section
-opt.statusline:append("%#Status2#")	-- Highlight group
-opt.statusline:append(" %b 0x%B ")	-- ASCII char decimal and hex
-opt.statusline:append(" | ")		-- Separator
-opt.statusline:append("%l:%c")		-- Line and column
+local status_str = ""
+status_str = status_str .. "%m "	-- Modified flag
+status_str = status_str .. "%.32f "	-- Filename (limit to 32 chars)
+status_str = status_str .. "%y"		-- Filetype
+status_str = status_str .. "%="		-- Separator to right-aligned section
+status_str = status_str .. "%#Status2#"	-- Highlight group
+status_str = status_str .. " %b 0x%B "	-- ASCII char decimal and hex
+status_str = status_str .. " | "	-- Separator
+status_str = status_str .. "%l:%c"	-- Line and column
+
+opt.statusline = status_str
 

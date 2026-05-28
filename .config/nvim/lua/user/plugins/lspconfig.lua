@@ -3,7 +3,6 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
-        	"folke/neodev.nvim",
 	},
 	config = function()
 		local nvim_lsp = require("lspconfig")
@@ -12,17 +11,18 @@ return {
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		mason_lspconfig.setup({
-			function(server)
-				nvim_lsp[server].setup({
-					capabilities = capabilities
-				})
-			end,
-			["clangd"] = function()
-				nvim_lsp["clangd"].setup({
-					capabilities = capabilities,
-					cmd = { "clangd", "--compile-commands-dir=." },
-				})
-			end,
+			handlers = {
+				function(server)
+					nvim_lsp[server].setup({ capabilities = capabilities })
+				end,
+
+				["clangd"] = function()
+					nvim_lsp["clangd"].setup({
+						capabilities = capabilities,
+						cmd = { "clangd", "--compile-commands-dir=." },
+					})
+				end,
+			}
 		})
 
 		vim.diagnostic.config({
